@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="ab4fe4b0-eca6-4276-90fa-637a1c3bddfa" activeEnvironment="Default" name="swagger_rest_test" soapui-version="5.4.0" xmlns:con="http://eviware.com/soapui/config">
+	<con:settings/>
+	<con:interface xsi:type="con:RestService" id="2b0c37d0-d218-4767-89d2-a9c6f815f60b" wadlVersion="http://wadl.dev.java.net/2009/02" name="SWAGGER API" type="rest" basePath="/api" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<con:description xsi:nil="true"/>
+		<con:settings/>
+		<con:definitionCache/>
+		<con:endpoints> 
+			<con:endpoint>http://localhost:8080/lde</con:endpoint>
+		</con:endpoints>
+		<con:resource name="/v1/app/{id}" path="/v1/app/{id}" id="a438f2a7-69aa-4416-a40d-d5d228ab9f1a">
+			<con:settings/>
+			<con:parameters/>
+			<con:method name="retrieveApplication" id="7baadc02-87be-426f-b2d7-36c7a8fd0edf" method="GET">
+				<con:description>Retrieve application via TRN</con:description>
+				<con:settings/>
+				<con:parameters>
+					<con:parameter required="true">
+						<con:name>id</con:name>
+						<con:style>TEMPLATE</con:style>
+					</con:parameter>
+				</con:parameters>
+				<con:representation type="RESPONSE">
+					<con:mediaType>application/json</con:mediaType>
+					<con:status>200</con:status>
+					<con:params/>
+				</con:representation>
+				<con:representation type="RESPONSE">
+					<con:mediaType>application/json</con:mediaType>
+					<con:status>400</con:status>
+					<con:params/>
+				</con:representation>
+				<con:representation type="RESPONSE">
+					<con:mediaType>application/json</con:mediaType>
+					<con:status>500</con:status>
+					<con:params/>
+				</con:representation>
+				<con:request name="Request 1" id="758556b2-e130-48ba-947c-09a75482d2eb" mediaType="application/json">
+					<con:settings/>
+					<con:parameters/>
+				</con:request>
+				<con:request name="restTestStepOK" id="a0d58d8b-2205-4b2c-bab5-2bcca47a4b07" mediaType="application/json">
+					<con:settings/>
+					<con:endpoint>http://localhost:8080/lde</con:endpoint>
+					<con:parameters/>
+				</con:request>
+			</con:method>
+		</con:resource>
+		<con:resource name="/v1/app/{id}/attachment/{aid}" path="/v1/app/{id}/attachment/{aid}" id="b31d690b-4698-4e1c-993d-fe62e5bf3547">
+			<con:settings/>
+			<con:parameters/>
+			<con:method name="retrieveAttachmentContent" id="42b88db5-28e2-41a9-bea5-16fc249b1358" method="GET">
+				<con:description>Retrieve attachment content via Application ID</con:description>
+				<con:settings/>
+				<con:parameters>
+					<con:parameter required="true">
+						<con:name>id</con:name>
+						<con:style>TEMPLATE</con:style>
+					</con:parameter>
+					<con:parameter required="true">
+						<con:name>aid</con:name>
+						<con:style>TEMPLATE</con:style>
+					</con:parameter>
+				</con:parameters>
+				<con:representation type="RESPONSE">
+					<con:mediaType>application/json</con:mediaType>
+					<con:status>200</con:status>
+					<con:params/>
+				</con:representation>
+				<con:representation type="RESPONSE">
+					<con:mediaType>application/json</con:mediaType>
+					<con:status>400</con:status>
+					<con:params/>
+				</con:representation>
+				<con:representation type="RESPONSE">
+					<con:mediaType>application/json</con:mediaType>
+					<con:status>500</con:status>
+					<con:params/>
+				</con:representation>
+				<con:request name="Request 1" id="53397745-988e-4516-a787-075ab4493e25" mediaType="application/json">
+					<con:settings/>
+					<con:parameters/>
+				</con:request>
+			</con:method>
+		</con:resource>
+		<con:resource name="/v1/app/{id}/attachment/{aid}/processCDHAction" path="/v1/app/{id}/attachment/{aid}/processCDHAction" id="7220290e-369f-43c6-b97d-2c414e74d86e">
+			<con:settings/>
+			<con:parameters/>
+			<con:method name="processCDHAction" id="53be2f51-bbe8-4aa2-baf7-ba45ce05152c" method="PUT">
+				<con:description>Process CDH Action</con:description>
+				<con:settings/>
+				<con:parameters>
+					<con:parameter required="true">
+						<con:name>id</con:name>
+						<con:style>TEMPLATE</con:style>
+					</con:parameter>
+					<con:parameter required="true">
+						<con:name>aid</con:name>
+						<con:style>TEMPLATE</con:style>
+					</con:parameter>
+				</con:parameters>
+				<con:representation type="RESPONSE">
+					<con:mediaType>application/json</con:mediaType>
+					<con:status>200</con:status>
+					<con:params/>
+				</con:representation>
+				<con:representation type="RESPONSE">
+					<con:mediaType>application/json</con:mediaType>
+					<con:status>400</con:status>
+					<con:params/>
+				</con:representation>
+				<con:representation type="RESPONSE">
+					<con:mediaType>application/json</con:mediaType>
+					<con:status>500</con:status>
+					<con:params/>
+				</con:representation>
+				<con:representation type="REQUEST">
+					<con:mediaType>application/json</con:mediaType>
+					<con:params/>
+				</con:representation>
+				<con:request name="Request 1" id="49554781-5c8a-4533-95ac-4a8175eb6180" mediaType="application/json">
+					<con:settings/>
+					<con:parameters/>
+				</con:request>
+			</con:method>
+		</con:resource>
+		<con:resource name="/v1/app/{id}/attachment/{aid}/redactVerified" path="/v1/app/{id}/attachment/{aid}/redactVerified" id="376b1d5a-83da-461a-91e4-8c78bd762591">
+			<con:settings/>
+			<con:parameters/>
+			<con:method name="redactVerified" id="86a498eb-728f-45a1-b44b-a03c07980d75" method="PUT">
+				<con:description>Attachment redact verified</con:description>
+				<con:settings/>
+				<con:parameters>
+					<con:parameter required="true">
+						<con:name>id</con:name>
+						<con:style>TEMPLATE</con:style>
+					</con:parameter>
+					<con:parameter required="true">
+						<con:name>aid</con:name>
+						<con:style>TEMPLATE</con:style>
+					</con:parameter>
+				</con:parameters>
+				<con:representation type="RESPONSE">
+					<con:mediaType>application/json</con:mediaType>
+					<con:status>200</con:status>
+					<con:params/>
+				</con:representation>
+				<con:representation type="RESPONSE">
+					<con:mediaType>application/json</con:mediaType>
+					<con:status>400</con:status>
+					<con:params/>
+				</con:representation>
+				<con:representation type="RESPONSE">
+					<con:mediaType>application/json</con:mediaType>
+					<con:status>500</con:status>
+					<con:params/>
+				</con:representation>
+				<con:request name="Request 1" id="6581efc0-9ce2-4828-bbf1-a39b89d30109" mediaType="application/json">
+					<con:settings/>
+					<con:parameters/>
+				</con:request>
+			</con:method>
+		</con:resource>
+		<con:resource name="/v1/app/{id}/attachment/{aid}/saveRedactImage" path="/v1/app/{id}/attachment/{aid}/saveRedactImage" id="0bf8486e-d023-4768-a436-8df08dbccd69">
+			<con:settings/>
+			<con:parameters/>
+			<con:method name="saveRedactImage" id="a30fffb2-2c1e-45b8-896d-49bde3124342" method="PUT">
+				<con:description>Save redact image</con:description>
+				<con:settings/>
+				<con:parameters>
+					<con:parameter required="true">
+						<con:name>id</con:name>
+						<con:style>TEMPLATE</con:style>
+					</con:parameter>
+					<con:parameter required="true">
+						<con:name>aid</con:name>
+						<con:style>TEMPLATE</con:style>
+					</con:parameter>
+				</con:parameters>
+				<con:representation type="RESPONSE">
+					<con:mediaType>application/json</con:mediaType>
+					<con:status>200</con:status>
+					<con:params/>
+				</con:representation>
+				<con:representation type="RESPONSE">
+					<con:mediaType>application/json</con:mediaType>
+					<con:status>400</con:status>
+					<con:params/>
+				</con:representation>
+				<con:representation type="RESPONSE">
+					<con:mediaType>application/json</con:mediaType>
+					<con:status>500</con:status>
+					<con:params/>
+				</con:representation>
+				<con:representation type="REQUEST">
+					<con:mediaType>application/json</con:mediaType>
+					<con:params/>
+				</con:representation>
+				<con:request name="Request 1" id="999c978e-b175-4272-aeb4-51aecf321e31" mediaType="application/json">
+					<con:settings/>
+					<con:parameters/>
+				</con:request>
+			</con:method>
+		</con:resource>
+		<con:resource name="/v1/app/{id}/attachment/{aid}/updateEvidenceType" path="/v1/app/{id}/attachment/{aid}/updateEvidenceType" id="a51df4a4-a47f-421e-a5b6-66860b4c8591">
+			<con:settings/>
+			<con:parameters/>
+			<con:method name="updateEvidenceType" id="4c408a46-d148-4d56-af4a-9db7813e53dc" method="PUT">
+				<con:description>Update evidence type</con:description>
+				<con:settings/>
+				<con:parameters>
+					<con:parameter required="true">
+						<con:name>id</con:name>
+						<con:style>TEMPLATE</con:style>
+					</con:parameter>
+					<con:parameter required="true">
+						<con:name>aid</con:name>
+						<con:style>TEMPLATE</con:style>
+					</con:parameter>
+				</con:parameters>
+				<con:representation type="RESPONSE">
+					<con:mediaType>application/json</con:mediaType>
+					<con:status>200</con:status>
+					<con:params/>
+				</con:representation>
+				<con:representation type="RESPONSE">
+					<con:mediaType>application/json</con:mediaType>
+					<con:status>400</con:status>
+					<con:params/>
+				</con:representation>
+				<con:representation type="RESPONSE">
+					<con:mediaType>application/json</con:mediaType>
+					<con:status>500</con:status>
+					<con:params/>
+				</con:representation>
+				<con:representation type="REQUEST">
+					<con:mediaType>application/json</con:mediaType>
+					<con:params/>
+				</con:representation>
+				<con:request name="Request 1" id="7fece917-1cf6-4b93-a20a-63b3219227e0" mediaType="application/json">
+					<con:settings/>
+					<con:parameters/>
+				</con:request>
+			</con:method>
+		</con:resource>
+		<con:resource name="/v1/app/{id}/retrieveDocumentCategoryGroups" path="/v1/app/{id}/retrieveDocumentCategoryGroups" id="be5e15e8-df37-49ba-9e98-7293a09c4426">
+			<con:settings/>
+			<con:parameters/>
+			<con:method name="retrieveDocumentCategoryGroups" id="079343c9-6e61-478e-b5b4-6612c5015153" method="GET">
+				<con:description>Retrieve document category groups</con:description>
+				<con:settings/>
+				<con:parameters>
+					<con:parameter required="true">
+						<con:name>id</con:name>
+						<con:style>TEMPLATE</con:style>
+					</con:parameter>
+				</con:parameters>
+				<con:representation type="RESPONSE">
+					<con:mediaType>application/json</con:mediaType>
+					<con:status>200</con:status>
+					<con:params/>
+				</con:representation>
+				<con:representation type="RESPONSE">
+					<con:mediaType>application/json</con:mediaType>
+					<con:status>400</con:status>
+					<con:params/>
+				</con:representation>
+				<con:representation type="RESPONSE">
+					<con:mediaType>application/json</con:mediaType>
+					<con:status>500</con:status>
+					<con:params/>
+				</con:representation>
+				<con:request name="Request 1" id="a4fb2a19-8736-4940-9ce5-38b89da9f359" mediaType="application/json">
+					<con:settings/>
+					<con:parameters/>
+				</con:request>
+			</con:method>
+		</con:resource>
+	</con:interface>
+	<con:testSuite id="15b12027-c2dc-4ae7-b7d5-34797ead6049" name="RestTestSuite">
+		<con:settings/>
+		<con:runType>SEQUENTIAL</con:runType>
+		<con:testCase id="bb3e56a2-42a8-4df0-b663-c29814851a6d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Test Retrieve Application" searchProperties="true">
+			<con:settings/>
+			<con:testStep type="restrequest" name="restTestStepOK" id="bfc4cb76-168a-407d-ba8d-3c4e43000060">
+				<con:settings/>
+				<con:config service="SWAGGER API" resourcePath="/api/v1/app/{id}" methodName="retrieveApplication" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+					<con:restRequest name="restTestStepOK" id="a0d58d8b-2205-4b2c-bab5-2bcca47a4b07" mediaType="application/json">
+						<con:settings/>
+						<con:endpoint>http://localhost:8080/lde</con:endpoint>
+						<con:request/>
+						<con:originalUri>http://localhost/lde/api/v1/app/Request33</con:originalUri>
+						<con:assertion type="Valid HTTP Status Codes" id="ef71024b-6c59-4dda-9c06-cfa9052b4ac4" name="Valid HTTP Status Codes">
+							<con:configuration>
+								<codes>200</codes>
+							</con:configuration>
+						</con:assertion>
+						<con:credentials>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:parameters>
+							<entry key="id" value="Request33" xmlns="http://eviware.com/soapui/config"/>
+						</con:parameters>
+					</con:restRequest>
+				</con:config>
+			</con:testStep>
+			<con:properties/>
+		</con:testCase>
+		<con:properties/>
+	</con:testSuite>
+	<con:properties/>
+	<con:wssContainer/>
+	<con:oAuth2ProfileContainer/>
+	<con:oAuth1ProfileContainer/>
+</con:soapui-project>

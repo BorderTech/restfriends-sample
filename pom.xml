@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.github.bordertech.common</groupId>
+		<artifactId>qa-parent</artifactId>
+		<version>1.0.12</version>
+	</parent>
+
+	<groupId>com.github.bordertech.restfriends</groupId>
+	<artifactId>sample-parent</artifactId>
+	<name>sample-parent</name>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<description>Restfriends Sample REST API</description>
+
+	<packaging>pom</packaging>
+
+	<properties>
+		<skip.enforcer.qa>true</skip.enforcer.qa>
+		<bt.fail.enforcer>false</bt.fail.enforcer>
+		<bt.qa.skip>true</bt.qa.skip>
+		<bt.owasp.skip>true</bt.owasp.skip>
+	</properties>
+
+	<url>https://github.com/bordertech/restfriends-sample</url>
+
+	<scm>
+		<url>https://github.com/bordertech/restfriends-sample</url>
+		<connection>scm:git:https://github.com/bordertech/restfriends-sample.git</connection>
+		<developerConnection>scm:git:https://github.com/bordertech/restfriends-sample.git</developerConnection>
+		<tag>restfriends-sample-1.0.0</tag>
+	</scm>
+
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/bordertech/restfriends-sample/issues</url>
+	</issueManagement>
+
+	<ciManagement>
+		<system>Travis CI</system>
+		<url>https://travis-ci.com/BorderTech/restfriends-sample</url>
+	</ciManagement>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- Restfriends -->
+			<dependency>
+				<groupId>com.github.bordertech.restfriends</groupId>
+				<artifactId>restfriends-envelope</artifactId>
+				<version>1.0.2</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.bordertech.restfriends</groupId>
+				<artifactId>restfriends-swagger-jersey1</artifactId>
+				<version>1.0.2</version>
+			</dependency>
+			<!-- LDE Tomcat -->
+			<dependency>
+				<groupId>com.github.bordertech.lde</groupId>
+				<artifactId>lde-tomcat</artifactId>
+				<version>1.0.3</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>3.4</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>2.6</version>
+			</dependency>
+
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.12</version>
+				<scope>test</scope>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+	<modules>
+		<module>sample-api</module>
+		<module>sample-api-bdd</module>
+		<module>sample-api-mock</module>
+		<module>sample-api-rest</module>
+		<module>sample-api-rest-client</module>
+		<module>sample-api-rest-server</module>
+		<module>sample-app-bom</module>
+		<module>sample-app-lde</module>
+		<module>sample-app-war</module>
+		<module>sample-api-test-postman</module>
+		<module>sample-api-test-soapui</module>
+		<module>sample-api-test-restassured</module>
+	</modules>
+
+</project>

@@ -1,0 +1,7 @@
+{
+	"name": "test-av-api",
+	"version": "1.0.0",
+	"dependencies": {
+		"newman": "4.1.0"
+	}
+}
