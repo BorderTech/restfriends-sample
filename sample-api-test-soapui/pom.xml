@@ -18,6 +18,38 @@
 		<skip.enforcer.qa>true</skip.enforcer.qa>
 	</properties>
 
+
+	<profiles>
+		<profile>
+			<id>soapui-repos</id>
+			<activation>
+				<property>
+					<name>!no-soapui-repo</name>
+				</property>
+			</activation>
+			<repositories>
+				<repository>
+					<id>soapui</id>
+					<url>http://www.soapui.org/repository/maven2/</url>
+				</repository>
+				<repository>
+					<id>smartbear</id>
+					<url>http://smartbearsoftware.com/repository/maven</url>
+				</repository>
+			</repositories>
+			<pluginRepositories>
+				<pluginRepository>
+					<id>soapui-plugin</id>
+					<url>http://www.soapui.org/repository/maven2/</url>
+				</pluginRepository>
+				<pluginRepository>
+					<id>smartbear-plugin</id>
+					<url>http://smartbearsoftware.com/repository/maven</url>
+				</pluginRepository>
+			</pluginRepositories>
+		</profile>
+	</profiles>
+
 	<dependencies>
 
 		<!-- REST Server LDE -->
