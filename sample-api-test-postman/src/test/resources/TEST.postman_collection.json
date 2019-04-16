@@ -1,0 +1,59 @@
+{
+	"info": {
+		"_postman_id": "d0480cc3-c06f-46c6-9459-447fac4b4d80",
+		"name": "TEST SAMPLE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Retrieve application via ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cf9d2d1a-51d3-4432-a3ac-059a4228b310",
+						"exec": [
+							"var responseJSON = JSON.parse(responseBody); ",
+							"tests[\"Status is 200\"] = responseCode.code === 200;",
+							"tests[\"Application ID correct\"] = responseJSON.data.applicationId === \"TEST\";",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseurl}}/api/v1/app/:id",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"app",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "TEST"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

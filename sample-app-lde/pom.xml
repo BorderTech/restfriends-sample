@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.github.bordertech.restfriends</groupId>
+		<artifactId>sample-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<packaging>jar</packaging>
+
+	<artifactId>sample-app-lde</artifactId>
+	<description>LDE for running locally</description>
+
+	<properties>
+		<skip.enforcer.qa>false</skip.enforcer.qa>
+	</properties>
+
+	<dependencies>
+
+		<!-- BOM -->
+		<dependency>
+			<groupId>com.github.bordertech.restfriends</groupId>
+			<artifactId>sample-app-bom</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<!-- MOCK Services -->
+		<dependency>
+			<groupId>com.github.bordertech.restfriends</groupId>
+			<artifactId>sample-api-mock</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<!-- Tomcat LDE -->
+		<dependency>
+			<groupId>com.github.bordertech.lde</groupId>
+			<artifactId>lde-tomcat</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>16.0.1</version>
+		</dependency>
+
+	</dependencies>
+	<name>sample-app-lde</name>
+
+	<build>
+		<plugins>
+			<!-- LDE Runner - Use "mvn lde-exec:run" to start LDE -->
+			<plugin>
+				<groupId>com.github.bordertech.lde</groupId>
+				<artifactId>lde-exec-maven-plugin</artifactId>
+				<version>1.0.3</version>
+			</plugin>
+		</plugins>
+	</build>
+</project>

@@ -1,0 +1,138 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.github.bordertech.restfriends</groupId>
+		<artifactId>sample-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<packaging>jar</packaging>
+
+	<artifactId>sample-api-test-postman</artifactId>
+	<name>sample-api-test-postman</name>
+	<description>Test REST API with Postman</description>
+
+	<properties>
+		<!-- QA -->
+		<skip.enforcer.qa>true</skip.enforcer.qa>
+		<!-- Dont create a JAR for this module -->
+		<maven.deploy.skip>true</maven.deploy.skip>
+		<jar.skipIfEmpty>true</jar.skipIfEmpty>
+		<maven.install.skip>true</maven.install.skip>
+		<!-- NODE and NPM -->
+		<node.download.root>http://nodejs.org/dist/</node.download.root>
+		<npm.download.root>http://registry.npmjs.org/npm/-/</npm.download.root>
+		<npm.registry.url>https://registry.npmjs.org/</npm.registry.url>
+		<!-- NODE versions -->
+		<nodejs.version>v6.9.5</nodejs.version><!-- the version of node to be installed -->
+		<npmjs.version>3.10.10</npmjs.version><!-- the version of npm to be installed - should be the version that goes with your version of node -->
+		<!-- NODE Directories -->
+		<nodejs.dist.dir>${project.build.directory}/nodejsdist</nodejs.dist.dir>
+		<nodejs.dir>${basedir}/node</nodejs.dir><!-- Where we expect to find Node installed -->
+		<npmjs.dir>${nodejs.dir}/node_modules/npm/bin</npmjs.dir><!-- Where we expect to find NPM installed -->
+	</properties>
+
+	<dependencies>
+		<!-- REST Server LDE -->
+		<dependency>
+			<groupId>com.github.bordertech.restfriends</groupId>
+			<artifactId>sample-app-lde</artifactId>
+			<version>${project.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- TOMCAT LDE -->
+		<dependency>
+			<groupId>com.github.bordertech.lde</groupId>
+			<artifactId>lde-tomcat</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+
+			<!-- STOP and START Server -->
+			<plugin>
+				<groupId>com.github.bordertech.lde</groupId>
+				<artifactId>lde-exec-maven-plugin</artifactId>
+				<version>1.0.3</version>
+				<executions>
+					<!-- START -->
+					<execution>
+						<id>start-lde</id>
+						<goals>
+							<goal>start</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>stop-lde</id>
+						<goals>
+							<goal>stop</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>com.github.eirslett</groupId>
+				<artifactId>frontend-maven-plugin</artifactId>
+				<version>1.6</version>
+				<!-- Install NODE and NPM -->
+				<executions>
+					<execution>
+						<id>install node and npm</id>
+						<goals>
+							<goal>install-node-and-npm</goal>
+						</goals>
+						<phase>generate-resources</phase>
+						<configuration>
+							<nodeVersion>${nodejs.version}</nodeVersion>
+							<npmVersion>${npmjs.version}</npmVersion>
+							<nodeDownloadRoot>${node.download.root}</nodeDownloadRoot>
+							<npmDownloadRoot>${npm.download.root}</npmDownloadRoot>
+							<npmRegistryURL>${npm.registry.url}</npmRegistryURL>
+						</configuration>
+					</execution>
+					<!-- Install the NPM modules we need from package.json -->
+					<execution>
+						<id>npm install</id>
+						<goals>
+							<goal>npm</goal>
+						</goals>
+						<phase>generate-resources</phase>
+						<configuration>
+							<arguments>install</arguments>
+							<npmRegistryURL>${npm.registry.url}</npmRegistryURL>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- Run NEWMAN -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.6.0</version>
+				<executions>
+					<!-- Run newman -->
+					<execution>
+						<id>newman-tests</id>
+						<phase>integration-test</phase>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+						<configuration>
+							<skip>false</skip>
+							<executable>${nodejs.dir}/node</executable>
+							<commandlineArgs>${basedir}/node_modules/newman/bin/newman.js run ${basedir}/src/test/resources/TEST.postman_collection.json -e ${basedir}/src/test/resources/LOCALTEST.postman_environment.json -r junit --reporter-junit-export ${basedir}/target/test-results.xml --disable-unicode</commandlineArgs>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+	</build>
+
+</project>

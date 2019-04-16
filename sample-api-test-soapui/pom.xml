@@ -1,0 +1,279 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.github.bordertech.restfriends</groupId>
+		<artifactId>sample-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<packaging>jar</packaging>
+
+	<artifactId>sample-api-test-soapui</artifactId>
+	<name>sample-api-test-soapui</name>
+	<description>Test REST API with SOAP UI</description>
+
+	<properties>
+		<skip.enforcer.qa>true</skip.enforcer.qa>
+	</properties>
+
+
+	<profiles>
+		<profile>
+			<id>soapui-repos</id>
+			<activation>
+				<property>
+					<name>!no-soapui-repo</name>
+				</property>
+			</activation>
+			<repositories>
+				<repository>
+					<id>soapui</id>
+					<url>http://www.soapui.org/repository/maven2/</url>
+				</repository>
+				<repository>
+					<id>smartbear</id>
+					<url>http://smartbearsoftware.com/repository/maven</url>
+				</repository>
+			</repositories>
+			<pluginRepositories>
+				<pluginRepository>
+					<id>soapui-plugin</id>
+					<url>http://www.soapui.org/repository/maven2/</url>
+				</pluginRepository>
+				<pluginRepository>
+					<id>smartbear-plugin</id>
+					<url>http://smartbearsoftware.com/repository/maven</url>
+				</pluginRepository>
+			</pluginRepositories>
+		</profile>
+	</profiles>
+
+	<dependencies>
+
+		<!-- REST Server LDE -->
+		<dependency>
+			<groupId>com.github.bordertech.restfriends</groupId>
+			<artifactId>sample-app-lde</artifactId>
+			<version>${project.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- API BDD Features -->
+		<dependency>
+			<groupId>com.github.bordertech.restfriends</groupId>
+			<artifactId>sample-api-bdd</artifactId>
+			<version>${project.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- JUNIT -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- SOAPUI -->
+		<dependency>
+			<groupId>com.smartbear.soapui</groupId>
+			<artifactId>soapui</artifactId>
+			<version>5.4.0</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- Had to manually change the POM file to upload this artifact into nexus. SOAPUI Repo is dodgy. -->
+		<dependency>
+			<groupId>com.smartbear</groupId>
+			<artifactId>soapui-swagger-plugin</artifactId>
+			<version>2.1</version>
+			<scope>test</scope>
+			<exclusions>
+				<!-- Something is wrong bringing this dependency in from SOAPUI Repo. Not needed anyway. -->
+				<exclusion>
+					<groupId>com.smartbear</groupId>
+					<artifactId>ready-api-soapui-pro</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!--
+		<dependency>
+			<groupId>com.smartbear.soapui</groupId>
+			<artifactId>soapui-testserver-api</artifactId>
+			<version>5.4.0</version>
+		</dependency>
+		-->
+
+		<!-- Needed for SOAPUI Runtime -->
+		<dependency>
+			<groupId>org.glassfish</groupId>
+			<artifactId>javax.json</artifactId>
+			<version>1.0-b06</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.swagger</groupId>
+			<artifactId>swagger-parser</artifactId>
+			<version>1.0.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>2.9.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Fix convergent errors -->
+		<dependency>
+			<groupId>xom</groupId>
+			<artifactId>xom</artifactId>
+			<version>1.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.11</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.santuario</groupId>
+			<artifactId>xmlsec</artifactId>
+			<version>1.5.8</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>jaxen</groupId>
+			<artifactId>jaxen</artifactId>
+			<version>1.1.6</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Serenity and Cucumber -->
+		<dependency>
+			<groupId>net.serenity-bdd</groupId>
+			<artifactId>serenity-core</artifactId>
+			<version>2.0.40</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.google.guava</groupId>
+					<artifactId>guava</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>io.cucumber</groupId>
+					<artifactId>cucumber-core</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>net.serenity-bdd</groupId>
+			<artifactId>serenity-junit</artifactId>
+			<version>2.0.40</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.google.guava</groupId>
+					<artifactId>guava</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>io.cucumber</groupId>
+					<artifactId>cucumber-core</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>net.serenity-bdd</groupId>
+			<artifactId>serenity-cucumber4</artifactId>
+			<version>1.0.6</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.google.guava</groupId>
+					<artifactId>guava</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>io.cucumber</groupId>
+					<artifactId>cucumber-core</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>27.0.1-jre</version>
+		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-core</artifactId>
+			<version>4.2.0</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+
+			<!-- Unpack the swagger JSON -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>3.1.1</version>
+				<executions>
+					<execution>
+						<id>unpack-swagger</id>
+						<phase>generate-test-sources</phase>
+						<goals>
+							<goal>unpack</goal>
+						</goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>com.github.bordertech.restfriends</groupId>
+									<artifactId>sample-api-rest</artifactId>
+									<version>${project.version}</version>
+									<type>jar</type>
+									<outputDirectory>${project.build.directory}/swagger-json</outputDirectory>
+									<includes>swagger.json</includes>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- Run a SOAPUI xml project -->
+			<!-- mvn com.smartbear.soapui:soapui-maven-plugin:test -->
+			<!--
+			<plugin>
+				<groupId>com.smartbear.soapui</groupId>
+				<artifactId>soapui-maven-plugin</artifactId>
+				<version>5.4.0</version>
+				<configuration>
+					<projectFile>${basedir}/SampleRestProject.xml</projectFile>
+					<endpoint>http://localhost:8082/lde</endpoint>
+				</configuration>
+				<executions>
+					<execution>
+						<id>SoapUI-Test</id>
+						<phase>integration-test</phase>
+						<goals>
+							<goal>test</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			-->
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<!-- Needed for tomcat jar lookups -->
+					<useSystemClassLoader>false</useSystemClassLoader>
+				</configuration>
+			</plugin>
+
+		</plugins>
+
+	</build>
+
+</project>
