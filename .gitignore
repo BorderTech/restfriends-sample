@@ -18,8 +18,8 @@ buildNumber.properties
 *.log*
 *.orig
 
-sample-api-test-postman/node/
-sample-api-test-postman/xml/
+sample-test-postman/node/
+sample-test-postman/xml/
 
 ### Node ###
 # Created by https://www.gitignore.io/api/node

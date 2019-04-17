@@ -10,8 +10,8 @@
 
 	<packaging>jar</packaging>
 
-	<artifactId>sample-api-test-restassured</artifactId>
-	<name>sample-api-test-restassured</name>
+	<artifactId>sample-test-restassured</artifactId>
+	<name>sample-test-restassured</name>
 	<description>Test REST API with Rest Assured</description>
 
 	<properties>

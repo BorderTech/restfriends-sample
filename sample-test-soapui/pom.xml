@@ -10,8 +10,8 @@
 
 	<packaging>jar</packaging>
 
-	<artifactId>sample-api-test-soapui</artifactId>
-	<name>sample-api-test-soapui</name>
+	<artifactId>sample-test-soapui</artifactId>
+	<name>sample-test-soapui</name>
 	<description>Test REST API with SOAP UI</description>
 
 	<properties>

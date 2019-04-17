@@ -10,8 +10,8 @@
 
 	<packaging>jar</packaging>
 
-	<artifactId>sample-api-test-postman</artifactId>
-	<name>sample-api-test-postman</name>
+	<artifactId>sample-test-postman</artifactId>
+	<name>sample-test-postman</name>
 	<description>Test REST API with Postman</description>
 
 	<properties>
