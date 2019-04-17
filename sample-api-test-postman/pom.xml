@@ -42,12 +42,6 @@
 			<version>${project.version}</version>
 			<scope>test</scope>
 		</dependency>
-		<!-- TOMCAT LDE -->
-		<dependency>
-			<groupId>com.github.bordertech.lde</groupId>
-			<artifactId>lde-tomcat</artifactId>
-			<scope>test</scope>
-		</dependency>
 	</dependencies>
 
 	<build>
