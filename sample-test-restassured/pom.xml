@@ -10,8 +10,8 @@
 
 	<packaging>jar</packaging>
 
-	<artifactId>sample-api-test-restassured</artifactId>
-	<name>sample-api-test-restassured</name>
+	<artifactId>sample-test-restassured</artifactId>
+	<name>sample-test-restassured</name>
 	<description>Test REST API with Rest Assured</description>
 
 	<properties>
@@ -29,14 +29,6 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- API BDD Features -->
-		<dependency>
-			<groupId>com.github.bordertech.restfriends</groupId>
-			<artifactId>sample-api-bdd</artifactId>
-			<version>${project.version}</version>
-			<scope>test</scope>
-		</dependency>
-
 		<!-- JUNIT -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -49,7 +41,7 @@
 		<dependency>
 			<groupId>io.swagger</groupId>
 			<artifactId>swagger-annotations</artifactId>
-			<version>1.5.21</version>
+			<version>1.5.22</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -59,23 +51,7 @@
 			<artifactId>rest-assured</artifactId>
 			<version>3.3.0</version>
 			<scope>test</scope>
-			<!--
-			<exclusions>
-				<exclusion>
-					<groupId>com.sun.xml.bind</groupId>
-					<artifactId>jaxb-osgi</artifactId>
-				</exclusion>
-			</exclusions>
-			-->
 		</dependency>
-		<!--
-		<dependency>
-			<groupId>com.sun.xml.bind.mvn</groupId>
-			<artifactId>jaxb-osgi</artifactId>
-			<version>2.2.10</version>
-			<scope>test</scope>
-		</dependency>
-		-->
 
 		<!--
 			private final OpenApiValidationFilter validationFilter = new OpenApiValidationFilter(API_SPEC_URL);
@@ -93,7 +69,7 @@
 		<dependency>
 			<groupId>org.jsmart</groupId>
 			<artifactId>zerocode-rest-bdd</artifactId>
-			<version>1.2.7</version>
+			<version>1.2.17</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -114,64 +90,35 @@
 		<dependency>
 			<groupId>net.serenity-bdd</groupId>
 			<artifactId>serenity-core</artifactId>
-			<version>2.0.40</version>
-			<exclusions>
-				<exclusion>
-					<groupId>com.google.guava</groupId>
-					<artifactId>guava</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>io.cucumber</groupId>
-					<artifactId>cucumber-core</artifactId>
-				</exclusion>
-			</exclusions>
+			<version>2.0.45</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>net.serenity-bdd</groupId>
 			<artifactId>serenity-junit</artifactId>
-			<version>2.0.40</version>
-			<exclusions>
-				<exclusion>
-					<groupId>com.google.guava</groupId>
-					<artifactId>guava</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>io.cucumber</groupId>
-					<artifactId>cucumber-core</artifactId>
-				</exclusion>
-			</exclusions>
+			<version>2.0.45</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>net.serenity-bdd</groupId>
 			<artifactId>serenity-cucumber4</artifactId>
-			<version>1.0.6</version>
-			<exclusions>
-				<exclusion>
-					<groupId>com.google.guava</groupId>
-					<artifactId>guava</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>io.cucumber</groupId>
-					<artifactId>cucumber-core</artifactId>
-				</exclusion>
-			</exclusions>
+			<version>1.0.7</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>27.0.1-jre</version>
-			<scope>test</scope>
-		</dependency>
+
+		<!-- Latest Cucumber. Anything over 4.2.0 crashes -->
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-core</artifactId>
 			<version>4.2.0</version>
 			<scope>test</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>27.1-jre</version>
+			<scope>test</scope>
+		</dependency>
 
 		<!-- Fix Convergence errors (Zerocode was very messy)-->
 		<dependency>
@@ -207,7 +154,7 @@
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpmime</artifactId>
-			<version>4.5.5</version>
+			<version>4.5.8</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -219,13 +166,13 @@
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
-			<version>20160810</version>
+			<version>20180813</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.google.inject</groupId>
 			<artifactId>guice</artifactId>
-			<version>4.2.1</version>
+			<version>4.2.2</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -237,9 +184,10 @@
 		<dependency>
 			<groupId>com.squareup.okio</groupId>
 			<artifactId>okio</artifactId>
-			<version>2.0.0</version>
+			<version>2.2.2</version>
 			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 
 	<build>

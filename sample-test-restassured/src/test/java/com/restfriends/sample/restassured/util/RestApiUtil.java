@@ -1,7 +1,6 @@
 package com.restfriends.sample.restassured.util;
 
 import com.github.bordertech.lde.api.LdeLauncher;
-import com.github.bordertech.swagger.servlet.PathUtil;
 import com.github.bordertech.swagger.servlet.SwaggerPathConfig;
 import com.restfriends.sample.restassured.client.v1.api.SampleServiceApi;
 import com.restfriends.sample.restassured.client.v1.invoker.ApiClient;
@@ -46,7 +45,7 @@ public class RestApiUtil {
 	 * @return the default base URL for the API
 	 */
 	public static String getBaseUrl() {
-		return PathUtil.prefixUrl(LdeLauncher.getProvider().getBaseUrl(), SwaggerPathConfig.getApiPath());
+		return LdeLauncher.getProvider().getBaseUrl() + "/" + SwaggerPathConfig.getApiPath();
 	}
 
 	/**
