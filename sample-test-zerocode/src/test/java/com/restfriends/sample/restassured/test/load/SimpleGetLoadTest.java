@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
  * Load test retrieve Application.
  */
 @LoadWith("load_config_sample.properties")
-@TestMapping(testClass = SimpleGetLoad.class, testMethod = "retrieveApplication")
+@TestMapping(testClass = SimpleApiTest.class, testMethod = "testRetrieveApplicationOK")
 @RunWith(ZeroCodeLoadRunner.class)
 public class SimpleGetLoadTest {
 

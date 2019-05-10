@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.github.bordertech.restfriends</groupId>
+		<artifactId>sample-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<packaging>jar</packaging>
+
+	<artifactId>sample-test-zerocode</artifactId>
+	<name>sample-test-zerocode</name>
+	<description>Test REST API with ZeroCode</description>
+
+	<properties>
+		<!-- Needed for tomcat jar lookups -->
+		<surefire.useSystemClassLoader>false</surefire.useSystemClassLoader>
+	</properties>
+
+	<dependencies>
+
+		<!-- REST Server LDE -->
+		<dependency>
+			<groupId>com.github.bordertech.restfriends</groupId>
+			<artifactId>sample-app-lde</artifactId>
+			<version>${project.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- JUNIT -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Zerocode -->
+		<dependency>
+			<groupId>org.jsmart</groupId>
+			<artifactId>zerocode-rest-bdd</artifactId>
+			<version>1.2.17</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+</project>

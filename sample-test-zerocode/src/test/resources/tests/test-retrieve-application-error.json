@@ -1,0 +1,15 @@
+{
+	"scenarioName": "Retrieve Application Error",
+	"steps": [
+		{
+			"name": "get_app",
+			"url": "/api/v1/app/error",
+			"operation": "GET",
+			"request": {
+			},
+			"assertions": {
+				"status": 500
+			}
+		}
+	]
+}
