@@ -1,0 +1,20 @@
+{
+	"scenarioName": "Retrieve Application OK",
+	"steps": [
+		{
+			"name": "get_app",
+			"url": "/api/v1/app/123",
+			"operation": "GET",
+			"request": {
+			},
+			"assertions": {
+				"status": 200,
+				"body": {
+					"data": {
+						"applicationId": "123"
+					}
+				}
+			}
+		}
+	]
+}

@@ -28,20 +28,18 @@
 			<version>${project.version}</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- API BDD -->
+		<dependency>
+			<groupId>com.github.bordertech.restfriends</groupId>
+			<artifactId>sample-api-bdd</artifactId>
+			<version>${project.version}</version>
+			<scope>test</scope>
+		</dependency>
 
 		<!-- JUNIT -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<!-- REST API -->
-		<!-- Swagger Annotations -->
-		<dependency>
-			<groupId>io.swagger</groupId>
-			<artifactId>swagger-annotations</artifactId>
-			<version>1.5.22</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -65,13 +63,6 @@
 			<scope>test</scope>
 		</dependency>
 		-->
-
-		<dependency>
-			<groupId>org.jsmart</groupId>
-			<artifactId>zerocode-rest-bdd</artifactId>
-			<version>1.2.17</version>
-			<scope>test</scope>
-		</dependency>
 
 		<!--
 		<dependency>
@@ -120,71 +111,10 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- Fix Convergence errors (Zerocode was very messy)-->
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-core</artifactId>
-			<version>2.9.8</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-			<version>2.9.8</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-annotations</artifactId>
-			<version>2.9.8</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.datatype</groupId>
-			<artifactId>jackson-datatype-joda</artifactId>
-			<version>2.9.8</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.datatype</groupId>
-			<artifactId>jackson-datatype-jdk8</artifactId>
-			<version>2.9.7</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpmime</artifactId>
-			<version>4.5.8</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.jayway.jsonpath</groupId>
-			<artifactId>json-path</artifactId>
-			<version>2.4.0</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.json</groupId>
-			<artifactId>json</artifactId>
-			<version>20180813</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.google.inject</groupId>
-			<artifactId>guice</artifactId>
-			<version>4.2.2</version>
-			<scope>test</scope>
-		</dependency>
 		<dependency>
 			<groupId>io.gsonfire</groupId>
 			<artifactId>gson-fire</artifactId>
 			<version>1.8.3</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.squareup.okio</groupId>
-			<artifactId>okio</artifactId>
-			<version>2.2.2</version>
 			<scope>test</scope>
 		</dependency>
 

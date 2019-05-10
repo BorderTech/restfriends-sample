@@ -100,6 +100,7 @@
 		<module>sample-test-postman</module>
 		<module>sample-test-restassured</module>
 		<module>sample-test-soapui</module>
+		<module>sample-test-zerocode</module>
 	</modules>
 
 </project>
