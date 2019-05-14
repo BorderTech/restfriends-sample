@@ -1,4 +1,4 @@
-# restfriends-sample
+# restfriends sample API
 [Restfriends](https://github.com/BorderTech/restfriends) sample REST API and automated testing example.
 
 A demo of the [Swagger UI](http://restfriends-sample-api.herokuapp.com/launchswagger) and [API](http://restfriends-sample-api.herokuapp.com/api) are available.
