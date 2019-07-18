@@ -12,9 +12,11 @@
 
 	<artifactId>sample-test-zerocode</artifactId>
 	<name>sample-test-zerocode</name>
+
 	<description>Test REST API with ZeroCode</description>
 
 	<properties>
+		<enforcer.fail>false</enforcer.fail>
 		<!-- Needed for tomcat jar lookups -->
 		<surefire.useSystemClassLoader>false</surefire.useSystemClassLoader>
 	</properties>

@@ -12,11 +12,12 @@
 
 	<artifactId>sample-test-postman</artifactId>
 	<name>sample-test-postman</name>
+
 	<description>Test REST API with Postman</description>
 
 	<properties>
 		<!-- QA -->
-		<skip.enforcer.qa>true</skip.enforcer.qa>
+		<enforcer.fail>false</enforcer.fail>
 		<!-- Dont create a JAR for this module -->
 		<maven.deploy.skip>true</maven.deploy.skip>
 		<jar.skipIfEmpty>true</jar.skipIfEmpty>
@@ -51,7 +52,7 @@
 			<plugin>
 				<groupId>com.github.bordertech.lde</groupId>
 				<artifactId>lde-exec-maven-plugin</artifactId>
-				<version>1.0.3</version>
+				<version>1.0.4</version>
 				<executions>
 					<!-- START -->
 					<execution>
@@ -72,7 +73,7 @@
 			<plugin>
 				<groupId>com.github.eirslett</groupId>
 				<artifactId>frontend-maven-plugin</artifactId>
-				<version>1.6</version>
+				<version>1.7.6</version>
 				<!-- Install NODE and NPM -->
 				<executions>
 					<execution>

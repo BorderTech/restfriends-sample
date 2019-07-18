@@ -1,6 +1,6 @@
 package com.restfriends.sample.api.model.response;
 
-import com.github.bordertech.restfriends.envelope.DataResponse;
+import com.github.bordertech.restfriends.envelope.impl.DataResponse;
 import com.restfriends.sample.api.model.Application;
 
 /**

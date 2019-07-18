@@ -14,10 +14,12 @@
 
 	<artifactId>sample-api-rest-client</artifactId>
 	<name>sample-api-rest-client</name>
+
 	<description>REST API Client Implementation</description>
 
 	<properties>
-		<skip.enforcer.qa>false</skip.enforcer.qa>
+		<spotbugs.excludeFilterFile>${basedir}/spotbugs-exclude-files.xml</spotbugs.excludeFilterFile>
+		<suppressionFiles>${basedir}/../jackson-owasp-suppression.xml</suppressionFiles>
 	</properties>
 
 	<dependencies>
@@ -41,25 +43,25 @@
 		<dependency>
 			<groupId>com.github.bordertech.config</groupId>
 			<artifactId>config</artifactId>
-			<version>1.0.3</version>
+			<version>1.0.5</version>
 		</dependency>
 
 		<!-- Jersey Client REST Implementation -->
 		<dependency>
 			<groupId>org.glassfish.jersey.core</groupId>
 			<artifactId>jersey-client</artifactId>
-			<version>2.28</version>
+			<version>2.29</version>
 		</dependency>
 		<dependency>
 			<groupId>org.glassfish.jersey.media</groupId>
 			<artifactId>jersey-media-multipart</artifactId>
-			<version>2.28</version>
+			<version>2.29</version>
 		</dependency>
 		<!-- Use JACKSON as JSON Provider -->
 		<dependency>
 			<groupId>org.glassfish.jersey.media</groupId>
 			<artifactId>jersey-media-json-jackson</artifactId>
-			<version>2.28</version>
+			<version>2.29</version>
 			<exclusions>
 				<exclusion>
 					<groupId>com.fasterxml.jackson.core</groupId>
@@ -70,7 +72,7 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.datatype</groupId>
 			<artifactId>jackson-datatype-joda</artifactId>
-			<version>2.9.8</version>
+			<version>2.9.9</version>
 		</dependency>
 
 		<!-- Base64 encoding that works in both JVM and Android -->
@@ -201,6 +203,16 @@
 				</executions>
 			</plugin>
 
+			<!-- PMD - Exclude Generated -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-pmd-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>**/com/restfriends/sample/rest/client/jersey/**</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 

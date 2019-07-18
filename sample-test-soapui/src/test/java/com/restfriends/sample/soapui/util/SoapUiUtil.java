@@ -18,7 +18,7 @@ import com.eviware.soapui.support.types.StringToObjectMap;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.bordertech.restfriends.envelope.ErrorDetail;
-import com.github.bordertech.restfriends.envelope.ErrorResponse;
+import com.github.bordertech.restfriends.envelope.impl.ErrorResponse;
 import com.smartbear.swagger.Swagger2Importer;
 import java.io.IOException;
 import javax.json.stream.JsonGenerationException;

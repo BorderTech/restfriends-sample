@@ -15,10 +15,12 @@
 	<packaging>jar</packaging>
 
 	<artifactId>sample-app-bom</artifactId>
+	<name>sample-app-bom</name>
+
 	<description>App Tier Bill Of Materials</description>
 
 	<properties>
-		<skip.enforcer.qa>false</skip.enforcer.qa>
+		<suppressionFiles>${basedir}/../jackson-owasp-suppression.xml</suppressionFiles>
 	</properties>
 
 	<dependencies>
@@ -28,7 +30,7 @@
 			<artifactId>sample-api-rest-server</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-		
+
 		<!-- MOCK Implementation -->
 		<dependency>
 			<groupId>com.github.bordertech.restfriends</groupId>
@@ -40,7 +42,7 @@
 		<dependency>
 			<groupId>com.github.bordertech.didums</groupId>
 			<artifactId>didums-hk2</artifactId>
-			<version>1.0.3</version>
+			<version>1.0.4</version>
 			<!-- Convergence error -->
 			<exclusions>
 				<exclusion>
@@ -50,13 +52,5 @@
 			</exclusions>
 		</dependency>
 
-		<!-- JERSEY 1 -->
-		<dependency>
-			<groupId>javax.ws.rs</groupId>
-			<artifactId>jsr311-api</artifactId>
-			<version>1.1.1</version>
-		</dependency>
-
 	</dependencies>
-	<name>sample-app-bom</name>
 </project>

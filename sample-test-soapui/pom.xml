@@ -12,12 +12,12 @@
 
 	<artifactId>sample-test-soapui</artifactId>
 	<name>sample-test-soapui</name>
+
 	<description>Test REST API with SOAP UI</description>
 
 	<properties>
-		<skip.enforcer.qa>true</skip.enforcer.qa>
+		<enforcer.fail>false</enforcer.fail>
 	</properties>
-
 
 	<profiles>
 		<profile>
@@ -170,7 +170,7 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-annotations</artifactId>
-			<version>2.9.8</version>
+			<version>2.9.9</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -196,7 +196,7 @@
 		<dependency>
 			<groupId>jaxen</groupId>
 			<artifactId>jaxen</artifactId>
-			<version>1.1.6</version>
+			<version>1.2.0</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -229,7 +229,7 @@
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
-			<version>27.1-jre</version>
+			<version>28.0-jre</version>
 			<scope>test</scope>
 		</dependency>
 

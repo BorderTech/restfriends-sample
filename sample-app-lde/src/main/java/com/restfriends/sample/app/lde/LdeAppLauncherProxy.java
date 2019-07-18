@@ -7,7 +7,7 @@ import com.github.bordertech.lde.api.LdeLauncher;
  */
 public final class LdeAppLauncherProxy {
 
-	public static void main(final String[] args) throws Exception {
+	public static void main(final String[] args) {
 		LdeLauncher.launchServer();
 	}
 }

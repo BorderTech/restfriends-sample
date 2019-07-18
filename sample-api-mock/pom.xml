@@ -13,10 +13,11 @@
 
 	<artifactId>sample-api-mock</artifactId>
 	<name>sample-api-mock</name>
+
 	<description>MOCK API Implemention</description>
 
 	<properties>
-		<skip.enforcer.qa>false</skip.enforcer.qa>
+		<spotbugs.excludeFilterFile>${basedir}/spotbugs-exclude-filter.xml</spotbugs.excludeFilterFile>
 	</properties>
 
 	<dependencies>

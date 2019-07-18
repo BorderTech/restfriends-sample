@@ -14,7 +14,7 @@
 	<name>sample-api-rest-server</name>
 
 	<properties>
-		<skip.enforcer.qa>false</skip.enforcer.qa>
+		<suppressionFiles>${basedir}/../jackson-owasp-suppression.xml</suppressionFiles>
 	</properties>
 
 	<dependencies>
@@ -29,14 +29,15 @@
 		<!-- Swagger-Jersey -->
 		<dependency>
 			<groupId>com.github.bordertech.restfriends</groupId>
-			<artifactId>restfriends-swagger-jersey1</artifactId>
+			<artifactId>restfriends-swagger-jersey2</artifactId>
+			<version>1.0.4</version>
 		</dependency>
 
 		<!-- Didums -->
 		<dependency>
 			<groupId>com.github.bordertech.didums</groupId>
 			<artifactId>didums-core</artifactId>
-			<version>1.0.3</version>
+			<version>1.0.4</version>
 			<scope>provided</scope>
 		</dependency>
 
