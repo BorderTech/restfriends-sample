@@ -1,6 +1,6 @@
 package com.restfriends.sample.rest.server.swagger;
 
-import com.github.bordertech.swagger.servlet.SwaggerJerseyServlet;
+import com.github.bordertech.swagger.servlet.SwaggerJersey2Servlet;
 import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
 
@@ -18,5 +18,5 @@ import javax.servlet.annotation.WebServlet;
 		},
 		loadOnStartup = 1
 )
-public class SampleSwaggerJerseyServlet extends SwaggerJerseyServlet {
+public class SampleSwaggerJerseyServlet extends SwaggerJersey2Servlet {
 }

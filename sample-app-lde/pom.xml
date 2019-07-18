@@ -15,10 +15,12 @@
 	<packaging>jar</packaging>
 
 	<artifactId>sample-app-lde</artifactId>
+	<name>sample-app-lde</name>
+
 	<description>LDE for running locally</description>
 
 	<properties>
-		<skip.enforcer.qa>false</skip.enforcer.qa>
+		<suppressionFiles>${basedir}/../jackson-owasp-suppression.xml</suppressionFiles>
 	</properties>
 
 	<dependencies>
@@ -43,25 +45,7 @@
 			<artifactId>lde-tomcat</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-core</artifactId>
-			<version>8.5.39</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-jasper</artifactId>
-			<version>8.5.39</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>27.1-jre</version>
-		</dependency>
-
 	</dependencies>
-	<name>sample-app-lde</name>
 
 	<build>
 		<plugins>
@@ -69,7 +53,7 @@
 			<plugin>
 				<groupId>com.github.bordertech.lde</groupId>
 				<artifactId>lde-exec-maven-plugin</artifactId>
-				<version>1.0.3</version>
+				<version>1.0.4</version>
 			</plugin>
 		</plugins>
 	</build>

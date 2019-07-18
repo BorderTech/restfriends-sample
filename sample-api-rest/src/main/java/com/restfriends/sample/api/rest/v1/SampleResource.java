@@ -1,6 +1,6 @@
 package com.restfriends.sample.api.rest.v1;
 
-import com.github.bordertech.restfriends.envelope.ErrorResponse;
+import com.github.bordertech.restfriends.envelope.impl.ErrorResponse;
 import com.restfriends.sample.api.exception.SampleBusinessException;
 import com.restfriends.sample.api.model.response.ApplicationResponse;
 import com.restfriends.sample.api.model.response.AttachmentContentResponse;
@@ -26,8 +26,8 @@ import javax.ws.rs.core.MediaType;
 /**
  * Sample REST Resource.
  * <p>
- * The REST interface does provide new methods for the actions that require multiple values passed in the body. These values are passed as an object
- * instead of individual values. These methods can then call the original API method.
+ * The REST interface does provide new methods for the actions that require multiple values passed in the body. These
+ * values are passed as an object instead of individual values. These methods can then call the original API method.
  * </p>
  */
 @Api(value = "SampleService")

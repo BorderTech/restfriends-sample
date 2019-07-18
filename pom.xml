@@ -8,7 +8,7 @@
 	<parent>
 		<groupId>com.github.bordertech.common</groupId>
 		<artifactId>qa-parent</artifactId>
-		<version>1.0.12</version>
+		<version>1.0.15</version>
 	</parent>
 
 	<groupId>com.github.bordertech.restfriends</groupId>
@@ -21,10 +21,8 @@
 	<packaging>pom</packaging>
 
 	<properties>
-		<skip.enforcer.qa>true</skip.enforcer.qa>
-		<bt.fail.enforcer>false</bt.fail.enforcer>
-		<bt.qa.skip>true</bt.qa.skip>
-		<bt.owasp.skip>true</bt.owasp.skip>
+		<bt.qa.skip>false</bt.qa.skip>
+		<checkstyle.skip>true</checkstyle.skip>
 	</properties>
 
 	<url>https://github.com/bordertech/restfriends-sample</url>
@@ -52,24 +50,24 @@
 			<dependency>
 				<groupId>com.github.bordertech.restfriends</groupId>
 				<artifactId>restfriends-envelope</artifactId>
-				<version>1.0.3</version>
+				<version>1.0.4</version>
 			</dependency>
 			<dependency>
 				<groupId>com.github.bordertech.restfriends</groupId>
 				<artifactId>restfriends-swagger-jersey1</artifactId>
-				<version>1.0.3</version>
+				<version>1.0.4</version>
 			</dependency>
 			<!-- LDE Tomcat -->
 			<dependency>
 				<groupId>com.github.bordertech.lde</groupId>
 				<artifactId>lde-tomcat</artifactId>
-				<version>1.0.3</version>
+				<version>1.0.4</version>
 			</dependency>
 
 			<dependency>
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-lang3</artifactId>
-				<version>3.4</version>
+				<version>3.9</version>
 			</dependency>
 			<dependency>
 				<groupId>commons-io</groupId>

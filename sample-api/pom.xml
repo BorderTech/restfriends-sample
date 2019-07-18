@@ -11,16 +11,12 @@
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
-
 	<packaging>jar</packaging>
 
 	<artifactId>sample-api</artifactId>
 	<name>sample-api</name>
-	<description>Sample API Interfaces and Model</description>
 
-	<properties>
-		<skip.enforcer.qa>false</skip.enforcer.qa>
-	</properties>
+	<description>Sample API Interfaces and Model</description>
 
 	<dependencies>
 		<dependency>

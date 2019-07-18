@@ -13,10 +13,6 @@
 	<artifactId>sample-api-rest</artifactId>
 	<name>sample-api-rest</name>
 
-	<properties>
-		<skip.enforcer.qa>false</skip.enforcer.qa>
-	</properties>
-
 	<dependencies>
 
 		<!-- API -->
@@ -66,7 +62,7 @@
 					<dependency>
 						<groupId>com.github.bordertech.restfriends</groupId>
 						<artifactId>restfriends-swagger-json-fix</artifactId>
-						<version>1.0.2</version>
+						<version>1.0.4</version>
 					</dependency>
 				</dependencies>
 				<configuration>
@@ -94,7 +90,7 @@
 			<!-- Include swagger.json in target JAR -->
 			<plugin>
 				<artifactId>maven-resources-plugin</artifactId>
-				<version>2.6</version>
+				<version>3.1.0</version>
 				<executions>
 					<execution>
 						<id>copy-resources</id>
